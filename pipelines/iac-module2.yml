@@ -12,7 +12,7 @@ name: IaC Module 2
 
 variables:
   - name: prefix
-    value: dotnetvbdm2$(uniqueId) #CHANGE ME or delete me and get from dotnet-vbd library
+    value: mrt12 #CHANGE ME or delete me and get from dotnet-vbd library
   # - name: resourceGroupName
   #   value: aks-rg #CHANGE ME or delete me and get from dotnet-vbd library
   # - name: serviceConnectionName
