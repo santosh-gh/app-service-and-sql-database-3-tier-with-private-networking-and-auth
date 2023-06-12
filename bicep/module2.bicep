@@ -1,5 +1,5 @@
 @description('Location for all resources.')
-param location string = resourceGroup().location
+param location string = 'centralindia'
 
 @description('Prefix for all resources created by this template')
 param prefix string
