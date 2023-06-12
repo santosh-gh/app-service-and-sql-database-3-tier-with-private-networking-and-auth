@@ -26,21 +26,21 @@ module planModule './modules/appServicePlan.bicep' = {
 }
 
 //Create the API App Service
-// module apiAppModule './modules/appService.bicep' = {
-//   name: apiAppName
-//   params: {
-//     location: location
-//     appName: apiAppName
-//     planId: planModule.outputs.planId
-//     connectionStrings: [{
-//       connectionString: 'Server=tcp:${sqlServerModule.outputs.serverFullyQualifiedDomainName},1433;Initial Catalog=${sqlDatabaseName};Persist Security Info=False;User ID=${sqlAdministratorLogin};Password=${sqlAdministratorLoginPassword};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
-//       name: 'SampleApiContext'
-//       type: 'SQLAzure'
-//     }]
-//     useAuth: false
-//     isApi: true
-//   }
-// }
+module apiAppModule './modules/appService.bicep' = {
+  name: apiAppName
+  params: {
+    location: location
+    appName: apiAppName
+    planId: planModule.outputs.planId
+    connectionStrings: [{
+      connectionString: 'Server=tcp:${sqlServerModule.outputs.serverFullyQualifiedDomainName},1433;Initial Catalog=${sqlDatabaseName};Persist Security Info=False;User ID=${sqlAdministratorLogin};Password=${sqlAdministratorLoginPassword};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
+      name: 'SampleApiContext'
+      type: 'SQLAzure'
+    }]
+    useAuth: false
+    isApi: true
+  }
+}
 
 //Create the SQL Server
 // module sqlServerModule './modules/sqlServer.bicep' = {

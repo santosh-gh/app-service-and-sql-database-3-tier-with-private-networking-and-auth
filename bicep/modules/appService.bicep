@@ -2,7 +2,7 @@
 param location string = resourceGroup().location
 
 @description('The Runtime stack of current web app')
-param linuxFxVersion string = 'DOTNETCORE|7.0'
+param linuxFxVersion string = 'DOTNETCORE|6.0'
 
 @description('The plan id for the app service plan')
 param planId string
