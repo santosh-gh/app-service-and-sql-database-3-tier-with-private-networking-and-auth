@@ -14,7 +14,7 @@ variables:
   - name: workingDirectory
     value: ./api-app
   - name: prefix
-    value: apisql-m2-$(uniqueId) #CHANGE ME or delete me and get from dotnet-vbd library
+    value: apisql-m2-12 #CHANGE ME or delete me and get from dotnet-vbd library
   - name: resourceGroupName
     value: aks-rg #CHANGE ME or delete me and get from dotnet-vbd library
   - name: serviceConnectionName
