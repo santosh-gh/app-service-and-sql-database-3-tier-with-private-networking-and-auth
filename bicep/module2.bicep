@@ -11,10 +11,10 @@ param sqlAdministratorLogin string
 param sqlAdministratorLoginPassword string
 
 //Setup resource names
-var planName = '${prefix}-plan'
-var apiAppName = '${prefix}-api-app'
-var sqlServerName = '${prefix}-sql-server'
-var sqlDatabaseName = '${prefix}-db'
+var planName = '${prefix}plan'
+var apiAppName = '${prefix}apiapp'
+var sqlServerName = '${prefix}sqlserver'
+var sqlDatabaseName = '${prefix}db'
 
 //Create the App Service Plan
 module planModule './modules/appServicePlan.bicep' = {
