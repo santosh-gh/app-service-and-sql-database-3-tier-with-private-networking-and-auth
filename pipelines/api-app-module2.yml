@@ -14,7 +14,7 @@ variables:
   - name: workingDirectory
     value: ./api-app
   - name: prefix
-    value: dotnet-vbd-m2-12 #CHANGE ME or delete me and get from dotnet-vbd library
+    value: dotnet-vbd-m2-$(uniqueId) #CHANGE ME or delete me and get from dotnet-vbd library
   # - name: resourceGroupName
   #   value: dotnet-vbd-module2 #CHANGE ME or delete me and get from dotnet-vbd library
   - name: serviceConnectionName
