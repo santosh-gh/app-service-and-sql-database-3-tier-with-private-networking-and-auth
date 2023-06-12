@@ -1,5 +1,5 @@
 @description('Location for all resources.')
-param location string 
+param location string = resourceGroup().location
 
 @description('Prefix for all resources created by this template')
 param prefix string
