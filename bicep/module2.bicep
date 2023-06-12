@@ -43,27 +43,27 @@ module planModule './modules/appServicePlan.bicep' = {
 // }
 
 //Create the SQL Server
-module sqlServerModule './modules/sqlServer.bicep' = {
-  name: sqlServerName
-  params: {
-    location: location
-    sqlServerName: sqlServerName
-    sqlAdministratorLogin: sqlAdministratorLogin
-    sqlAdministratorLoginPassword: sqlAdministratorLoginPassword
-    useAzureAdAuth: false
-    usePrivateNetworking: false
-  }
-}
+// module sqlServerModule './modules/sqlServer.bicep' = {
+//   name: sqlServerName
+//   params: {
+//     location: location
+//     sqlServerName: sqlServerName
+//     sqlAdministratorLogin: sqlAdministratorLogin
+//     sqlAdministratorLoginPassword: sqlAdministratorLoginPassword
+//     useAzureAdAuth: false
+//     usePrivateNetworking: false
+//   }
+// }
 
-//Create the SQL Database
-module databaseModule './modules/sqlDatabase.bicep' = {
-  name: sqlDatabaseName
-  params: {
-    location: location
-    sqlServerName: sqlServerModule.outputs.serverName
-    databaseName: sqlDatabaseName
-  }
-}
+// //Create the SQL Database
+// module databaseModule './modules/sqlDatabase.bicep' = {
+//   name: sqlDatabaseName
+//   params: {
+//     location: location
+//     sqlServerName: sqlServerModule.outputs.serverName
+//     databaseName: sqlDatabaseName
+//   }
+// }
 
-//Output data used in the pipeline
-output serverFullyQualifiedDomainName string = sqlServerModule.outputs.serverFullyQualifiedDomainName
+// //Output data used in the pipeline
+// output serverFullyQualifiedDomainName string = sqlServerModule.outputs.serverFullyQualifiedDomainName
