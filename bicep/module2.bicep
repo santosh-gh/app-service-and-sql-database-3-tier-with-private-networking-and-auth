@@ -55,15 +55,15 @@ module sqlServerModule './modules/sqlServer.bicep' = {
   }
 }
 
-// //Create the SQL Database
-module databaseModule './modules/sqlDatabase.bicep' = {
-  name: sqlDatabaseName
-  params: {
-    location: location
-    sqlServerName: sqlServerModule.outputs.serverName
-    databaseName: sqlDatabaseName
-  }
-}
+// // //Create the SQL Database
+// module databaseModule './modules/sqlDatabase.bicep' = {
+//   name: sqlDatabaseName
+//   params: {
+//     location: location
+//     sqlServerName: sqlServerModule.outputs.serverName
+//     databaseName: sqlDatabaseName
+//   }
+// }
 
-//Output data used in the pipeline
-output serverFullyQualifiedDomainName string = sqlServerModule.outputs.serverFullyQualifiedDomainName
+// //Output data used in the pipeline
+// output serverFullyQualifiedDomainName string = sqlServerModule.outputs.serverFullyQualifiedDomainName
