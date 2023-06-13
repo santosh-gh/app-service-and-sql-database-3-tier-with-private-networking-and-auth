@@ -47,7 +47,7 @@ resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
       azureADOnlyAuthentication: true
       principalType: 'Application'
       login: 'admin_user_service_principal'
-      sid: sqlAdminObjectId
+      /*sid: sqlAdminObjectId*/
       tenantId: tenant().tenantId
     } : null
   }
