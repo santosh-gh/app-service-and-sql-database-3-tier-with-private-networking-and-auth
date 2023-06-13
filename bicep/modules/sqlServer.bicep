@@ -5,18 +5,18 @@ param location string = resourceGroup().location
 param sqlServerName string
 
 @description('The administrator username of the SQL logical server')
-param sqlAdministratorLogin string
+param sqlAdministratorLogin string = ''
 
 @description('The administrator password of the SQL logical server.')
 @secure()
-param sqlAdministratorLoginPassword string
+param sqlAdministratorLoginPassword string = ''
 
 @description('The object ID of the Active Directory administrator user.')
 param sqlAdminObjectId string = ''
 
-param useAzureAdAuth bool = false
+param useAzureAdAuth bool = true
 
-param usePrivateNetworking bool = false
+param usePrivateNetworking bool = true
 
 @description('Has the SQL Server already been created? This is work round a bug in the Bicep SQL Server resource that means it is not idempotent when Azure AD auth is enforced.')
 param alreadyCreated bool = false //When a SQL Server is being created a username and password must be supplied even if SQL Auth is being turned off. If SQL Auth is off, the deployment fails if you try to supply a username and password in an update... :(
@@ -47,7 +47,7 @@ resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
       azureADOnlyAuthentication: true
       principalType: 'Application'
       login: 'admin_user_service_principal'
-      /*sid: sqlAdminObjectId*/
+      sid: sqlAdminObjectId
       tenantId: tenant().tenantId
     } : null
   }
